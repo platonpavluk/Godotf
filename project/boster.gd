@@ -1,8 +1,11 @@
 extends Area2D
 @onready var player = $"../../Player"
+
 func _on_body_entered(body):
+	
 	if body.name == "Player":
-		player.SPEED = player.base_speed * 2
+		queue_free()
+		player.SPEED = player.base_speed + 100
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
