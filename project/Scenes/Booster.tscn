@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2y48cbiee4ce"]
+
+[ext_resource type="Script" path="res://boster.gd" id="1_goptm"]
+
+[sub_resource type="Gradient" id="Gradient_vc4wy"]
+colors = PackedColorArray(0, 0.572549, 0, 1, 0.101961, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4c50s"]
+gradient = SubResource("Gradient_vc4wy")
+height = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ouxw"]
+size = Vector2(68, 30)
+
+[node name="Booster" type="Node2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.0625, 1.875)
+texture = SubResource("GradientTexture2D_4c50s")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_goptm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7ouxw")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
