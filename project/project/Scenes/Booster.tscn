@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2y48cbiee4ce"]
+
+[ext_resource type="Script" path="res://boster.gd" id="1_goptm"]
+[ext_resource type="Texture2D" uid="uid://dnunw84iodw3u" path="res://image/Base Character - Free/FOOD.png" id="2_v4h1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ouxw"]
+size = Vector2(11, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s52xg"]
+atlas = ExtResource("2_v4h1h")
+region = Rect2(484, 130, 22, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cn4p"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s52xg")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Booster" type="Node2D"]
+z_index = -1
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_goptm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.5, 26)
+shape = SubResource("RectangleShape2D_7ouxw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(1, 26.25)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_2cn4p")
+animation = &"new_animation"
+
+[connection signal="hidden" from="." to="Area2D" method="_on_booster_hidden"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
