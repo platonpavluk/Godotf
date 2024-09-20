@@ -34,4 +34,10 @@ func _physics_process(delta: float) -> void:
 		animation.flip_h = true
 	elif direction > 0:
 		animation.flip_h = false
+		
+
+		
 	move_and_slide()
+	
+func dead():
+	get_tree()

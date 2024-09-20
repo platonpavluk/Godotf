@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://b801fx1aj46gr"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_mgois"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mgois")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="MenuBar" type="MenuBar" parent="CanvasGroup"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasGroup/MenuBar"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 245.0
+offset_right = 649.0
+offset_bottom = 475.0
+
+[node name="Button2" type="Button" parent="CanvasGroup/MenuBar/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 163.0
+offset_right = 289.0
+offset_bottom = 210.0
+text = "Exit"
+
+[node name="Button" type="Button" parent="CanvasGroup/MenuBar/Panel"]
+layout_mode = 0
+offset_top = 86.0
+offset_right = 289.0
+offset_bottom = 142.0
+text = "Kill"
+
+[connection signal="pressed" from="CanvasGroup/MenuBar/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasGroup/MenuBar/Panel/Button" to="CanvasGroup/MenuBar/Panel" method="_on_button_pressed"]
