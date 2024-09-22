@@ -42,5 +42,4 @@ scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_2cn4p")
 animation = &"new_animation"
 
-[connection signal="hidden" from="." to="Area2D" method="_on_booster_hidden"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://b801fx1aj46gr"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_ksvn2"]
+[ext_resource type="Script" path="res://Timer.gd" id="2_ffbrf"]
+[ext_resource type="Theme" uid="uid://cgdx60dxg8h1l" path="res://User interface/Button&Panel.tres" id="3_62sr7"]
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_ksvn2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+script = ExtResource("2_ffbrf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 82.0
+offset_bottom = 26.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "0:00:00"
+
+[node name="Score" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -172.0
+offset_right = 128.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_62sr7")
+
+[node name="Label" type="Label" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -99.0
+offset_right = 57.5
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "0:00:00"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 24.0
+offset_right = 88.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_62sr7")
+text = "Try again"
+
+[node name="Menu" type="Button" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_62sr7")
+text = "Menu"
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://tblf7l6jjw2"]
+[gd_scene load_steps=14 format=4 uid="uid://tblf7l6jjw2"]
 
 [ext_resource type="PackedScene" uid="uid://cvtnfvbv4y2r5" path="res://Scenes/player.tscn" id="1_aqv7k"]
 [ext_resource type="Texture2D" uid="uid://c44f1uaxjl31a" path="res://image/tiled/tileset.png" id="5_rg768"]
 [ext_resource type="Texture2D" uid="uid://7500l0woqcf0" path="res://image/tiled/background_0.png" id="6_7ptol"]
 [ext_resource type="PackedScene" uid="uid://d2y48cbiee4ce" path="res://Scenes/Booster.tscn" id="6_iwqje"]
 [ext_resource type="Texture2D" uid="uid://dimqww8pg26s8" path="res://image/tiled/background_1.png" id="7_2cfyd"]
-[ext_resource type="Script" path="res://Timer.gd" id="7_x7qav"]
 [ext_resource type="Texture2D" uid="uid://cv2myhqg01ejn" path="res://image/tiled/background_2.png" id="8_6bbxx"]
 [ext_resource type="PackedScene" uid="uid://6cltemomgl6l" path="res://Scenes/boster2.tscn" id="8_rj4sp"]
-[ext_resource type="PackedScene" uid="uid://b801fx1aj46gr" path="res://Scenes/panel.tscn" id="9_kd8xh"]
+[ext_resource type="PackedScene" uid="uid://b801fx1aj46gr" path="res://Scenes/Ui.tscn" id="9_v2hq8"]
 [ext_resource type="PackedScene" uid="uid://d2jsa860fq8if" path="res://finish.tscn" id="10_2rptm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ro8ur"]
@@ -252,12 +251,12 @@ sources/0 = SubResource("TileSetAtlasSource_mm4i5")
 [node name="Game" type="Node2D"]
 
 [node name="finish" parent="." instance=ExtResource("10_2rptm")]
-position = Vector2(870, -470)
+position = Vector2(1172, -127)
+scale = Vector2(0.991484, -0.218823)
 
 [node name="Player" parent="." instance=ExtResource("1_aqv7k")]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(1, 1)
 tile_set = SubResource("TileSet_f7m62")
 format = 2
 
@@ -309,26 +308,7 @@ centered = false
 [node name="Booster" parent="." instance=ExtResource("6_iwqje")]
 position = Vector2(211, 9)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.03
-autostart = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 82.0
-offset_bottom = 26.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 18
-text = "0:00:0000"
-script = ExtResource("7_x7qav")
-
-[node name="panel" parent="CanvasLayer" instance=ExtResource("9_kd8xh")]
-visible = false
-position = Vector2(-186, -247)
-
 [node name="booster" parent="." instance=ExtResource("8_rj4sp")]
 position = Vector2(584, -119)
 
-[connection signal="timeout" from="Timer" to="CanvasLayer/Label" method="_on_timer_timeout"]
+[node name="UI" parent="." instance=ExtResource("9_v2hq8")]
