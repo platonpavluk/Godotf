@@ -1,18 +1,17 @@
-[gd_scene load_steps=13 format=4 uid="uid://tblf7l6jjw2"]
+[gd_scene load_steps=12 format=4 uid="uid://tblf7l6jjw2"]
 
-[ext_resource type="PackedScene" uid="uid://cvtnfvbv4y2r5" path="res://Scenes/player.tscn" id="1_aqv7k"]
-[ext_resource type="TileSet" uid="uid://blvrpp6l5veer" path="res://User interface/Tile-set.tres" id="3_3j34w"]
-[ext_resource type="Texture2D" uid="uid://c44f1uaxjl31a" path="res://image/tiled/tileset.png" id="5_rg768"]
-[ext_resource type="Texture2D" uid="uid://7500l0woqcf0" path="res://image/tiled/background_0.png" id="6_7ptol"]
-[ext_resource type="PackedScene" uid="uid://d2y48cbiee4ce" path="res://Scenes/Booster.tscn" id="6_iwqje"]
-[ext_resource type="Texture2D" uid="uid://dimqww8pg26s8" path="res://image/tiled/background_1.png" id="7_2cfyd"]
-[ext_resource type="Texture2D" uid="uid://cv2myhqg01ejn" path="res://image/tiled/background_2.png" id="8_6bbxx"]
-[ext_resource type="PackedScene" uid="uid://6cltemomgl6l" path="res://Scenes/boster2.tscn" id="8_rj4sp"]
-[ext_resource type="PackedScene" uid="uid://b801fx1aj46gr" path="res://Scenes/Ui.tscn" id="9_v2hq8"]
-[ext_resource type="PackedScene" uid="uid://d2jsa860fq8if" path="res://finish.tscn" id="10_2rptm"]
+[ext_resource type="PackedScene" uid="uid://d2jsa860fq8if" path="res://Scenes/finish.tscn" id="1_ngis0"]
+[ext_resource type="PackedScene" uid="uid://cvtnfvbv4y2r5" path="res://Scenes/player.tscn" id="2_u3r3n"]
+[ext_resource type="TileSet" uid="uid://blvrpp6l5veer" path="res://User interface/Tile-set.tres" id="3_bg355"]
+[ext_resource type="Texture2D" uid="uid://c44f1uaxjl31a" path="res://image/tiled/tileset.png" id="4_2e8jl"]
+[ext_resource type="Texture2D" uid="uid://7500l0woqcf0" path="res://image/tiled/background_0.png" id="5_74ofr"]
+[ext_resource type="Texture2D" uid="uid://dimqww8pg26s8" path="res://image/tiled/background_1.png" id="6_6cwca"]
+[ext_resource type="Texture2D" uid="uid://cv2myhqg01ejn" path="res://image/tiled/background_2.png" id="7_1uto3"]
+[ext_resource type="PackedScene" uid="uid://d2y48cbiee4ce" path="res://Scenes/Booster.tscn" id="8_njtu4"]
+[ext_resource type="PackedScene" uid="uid://b801fx1aj46gr" path="res://Scenes/Ui.tscn" id="10_6ec07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84mlo"]
-texture = ExtResource("5_rg768")
+texture = ExtResource("4_2e8jl")
 8:9/0 = 0
 8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:9/0 = 0
@@ -103,14 +102,13 @@ sources/0 = SubResource("TileSetAtlasSource_84mlo")
 
 [node name="Game" type="Node2D"]
 
-[node name="finish" parent="." instance=ExtResource("10_2rptm")]
-position = Vector2(1172, -127)
-scale = Vector2(0.991484, -0.218823)
+[node name="finish" parent="." instance=ExtResource("1_ngis0")]
+position = Vector2(1216, -136)
 
-[node name="Player" parent="." instance=ExtResource("1_aqv7k")]
+[node name="Player" parent="." instance=ExtResource("2_u3r3n")]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("3_3j34w")
+tile_set = ExtResource("3_bg355")
 format = 2
 
 [node name="Decor" type="TileMapLayer" parent="TileMap"]
@@ -134,7 +132,7 @@ metadata/_edit_group_ = true
 
 [node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer"]
 scale = Vector2(2, 2)
-texture = ExtResource("6_7ptol")
+texture = ExtResource("5_74ofr")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
@@ -144,7 +142,7 @@ metadata/_edit_group_ = true
 
 [node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer2"]
 scale = Vector2(2, 2)
-texture = ExtResource("7_2cfyd")
+texture = ExtResource("6_6cwca")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
@@ -154,13 +152,10 @@ metadata/_edit_group_ = true
 
 [node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer3"]
 scale = Vector2(2, 2)
-texture = ExtResource("8_6bbxx")
+texture = ExtResource("7_1uto3")
 centered = false
 
-[node name="Booster" parent="." instance=ExtResource("6_iwqje")]
+[node name="Booster" parent="." instance=ExtResource("8_njtu4")]
 position = Vector2(210, -12)
 
-[node name="booster" parent="." instance=ExtResource("8_rj4sp")]
-position = Vector2(584, -119)
-
-[node name="UI" parent="." instance=ExtResource("9_v2hq8")]
+[node name="UI" parent="." instance=ExtResource("10_6ec07")]

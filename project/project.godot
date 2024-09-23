@@ -13,7 +13,12 @@ config_version=5
 config/name="Game"
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+run/low_processor_mode=true
 config/icon="res://image/icon.svg"
+
+[display]
+
+window/size/mode=3
 
 [editor]
 

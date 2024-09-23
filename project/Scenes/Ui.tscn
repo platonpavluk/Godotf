@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b801fx1aj46gr"]
 
-[ext_resource type="Script" path="res://panel.gd" id="1_ksvn2"]
-[ext_resource type="Script" path="res://Timer.gd" id="2_ffbrf"]
+[ext_resource type="Script" path="res://script/panel.gd" id="1_ksvn2"]
+[ext_resource type="Script" path="res://script/Timer.gd" id="2_ffbrf"]
 [ext_resource type="Theme" uid="uid://cgdx60dxg8h1l" path="res://User interface/Button&Panel.tres" id="3_62sr7"]
 
 [node name="UI" type="Node2D"]
@@ -91,3 +91,5 @@ theme = ExtResource("3_62sr7")
 text = "Menu"
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="pressed" from="CanvasLayer/Score/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Score/Menu" to="." method="_on_menu_pressed"]

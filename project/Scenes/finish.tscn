@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2jsa860fq8if"]
 
-[ext_resource type="Script" path="res://finish.gd" id="1_d34ap"]
+[ext_resource type="Script" path="res://script/finish.gd" id="1_b6p4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ckb0"]
-size = Vector2(42, 203)
+size = Vector2(24, 203)
 
 [node name="finish" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_d34ap")
+script = ExtResource("1_b6p4c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9, 0)
 shape = SubResource("RectangleShape2D_4ckb0")
 
 [node name="ColorRect" type="ColorRect" parent="Area2D"]
@@ -20,9 +21,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -101.5
-offset_right = 20.0
-offset_bottom = 101.5
+offset_top = -101.0
+offset_right = 2.0
+offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 

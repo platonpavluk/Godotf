@@ -1,0 +1,12 @@
+res://Scenes/menu.tscn
+res://User interface/Button&Panel.tres
+res://User interface/Tile-set.tres
+res://Scenes/finish.tscn
+res://Scenes/Ui.tscn
+res://Scenes/tadle.tscn
+res://Scenes/level 2.tscn
+res://Scenes/player.tscn
+res://Scenes/level 1.tscn
+res://Scenes/Booster.tscn
+res://Scenes/boster2.tscn
+res://script/panel.gd

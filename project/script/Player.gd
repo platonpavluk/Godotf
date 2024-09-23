@@ -40,4 +40,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func dead():
-	get_tree()
+	queue_free()

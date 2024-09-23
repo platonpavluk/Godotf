@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://crc2pj7g4381j"]
+
+[ext_resource type="Script" path="res://script/table.gd" id="1_b336d"]
+[ext_resource type="Theme" uid="uid://cgdx60dxg8h1l" path="res://User interface/Button&Panel.tres" id="2_nhj6s"]
+[ext_resource type="Texture2D" uid="uid://7500l0woqcf0" path="res://image/tiled/background_0.png" id="3_eo2vg"]
+[ext_resource type="Texture2D" uid="uid://dimqww8pg26s8" path="res://image/tiled/background_1.png" id="4_abewt"]
+[ext_resource type="Texture2D" uid="uid://cv2myhqg01ejn" path="res://image/tiled/background_2.png" id="5_oun4c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b336d")
+
+[node name="backgound" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="backgound"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, 1)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.04, 0)
+motion_mirroring = Vector2(204, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_eo2vg")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(204, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_abewt")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.16, 0)
+motion_mirroring = Vector2(204, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("5_oun4c")
+centered = false
+
+[node name="2 level" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 112.0
+offset_right = 199.0
+offset_bottom = 193.0
+theme = ExtResource("2_nhj6s")
+theme_override_font_sizes/font_size = 30
+text = " Air-fls"
+
+[node name="1 level" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 195.0
+offset_bottom = 80.0
+theme = ExtResource("2_nhj6s")
+theme_override_font_sizes/font_size = 30
+text = "linearly"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 43.0
+theme = ExtResource("2_nhj6s")
+text = "Menu"
+
+[connection signal="pressed" from="2 level" to="." method="_on_2_level_pressed"]
+[connection signal="pressed" from="1 level" to="." method="_on_1_level_pressed"]
