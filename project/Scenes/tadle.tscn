@@ -65,13 +65,13 @@ theme = ExtResource("2_nhj6s")
 theme_override_font_sizes/font_size = 30
 text = "linearly"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1024.0
-offset_top = 1.0
-offset_right = 1152.0
-offset_bottom = 43.0
+[node name="menu" type="Button" parent="."]
+offset_left = 1255.0
+offset_right = 1383.0
+offset_bottom = 42.0
 theme = ExtResource("2_nhj6s")
 text = "Menu"
 
 [connection signal="pressed" from="2 level" to="." method="_on_2_level_pressed"]
 [connection signal="pressed" from="1 level" to="." method="_on_1_level_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

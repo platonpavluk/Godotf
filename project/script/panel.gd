@@ -11,9 +11,10 @@ func _physics_process(delta: float) -> void:
 			Score.visible = false
 			open = false
 		else:
-			timer.stop()
-			Score.visible = true
-			open = true
+				timer.stop()
+				Score.visible = true
+				open = true
+
 		
 
 func reload():
