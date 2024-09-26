@@ -1,9 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://cvtnfvbv4y2r5"]
+[gd_scene load_steps=26 format=3 uid="uid://cvtnfvbv4y2r5"]
 
 [ext_resource type="Script" path="res://script/Player.gd" id="1_v0sqn"]
 [ext_resource type="Texture2D" uid="uid://cs13qkexs8dig" path="res://image/Base Character - Free/idle.png" id="2_mo3en"]
 [ext_resource type="Texture2D" uid="uid://bjv3ed7ql5ynp" path="res://image/Base Character - Free/jump.png" id="3_0j0yb"]
+[ext_resource type="Texture2D" uid="uid://bmqe7o0aci40c" path="res://image/Base Character - Free/damage.png" id="4_crvgm"]
 [ext_resource type="Texture2D" uid="uid://vm06815pv0kn" path="res://image/Base Character - Free/run.png" id="4_m2lv4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7v8q"]
+atlas = ExtResource("4_crvgm")
+region = Rect2(80, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xv08n"]
 atlas = ExtResource("2_mo3en")
@@ -76,6 +81,14 @@ region = Rect2(560, 0, 80, 80)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ygisp"]
 resource_local_to_scene = true
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7v8q")
+}],
+"loop": true,
+"name": &"freeze",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xv08n")
@@ -154,7 +167,7 @@ script = ExtResource("1_v0sqn")
 position = Vector2(39.75, 20.375)
 scale = Vector2(1.43125, 1.31562)
 sprite_frames = SubResource("SpriteFrames_ygisp")
-animation = &"run"
+animation = &"freeze"
 
 [node name="Colision" type="CollisionShape2D" parent="."]
 position = Vector2(40.5, 20.5)

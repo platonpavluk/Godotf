@@ -48,10 +48,10 @@ texture = ExtResource("5_oun4c")
 centered = false
 
 [node name="2 level" type="Button" parent="."]
-offset_left = 5.0
-offset_top = 112.0
-offset_right = 199.0
-offset_bottom = 193.0
+offset_left = 6.0
+offset_top = 74.0
+offset_right = 170.02
+offset_bottom = 135.0
 theme = ExtResource("2_nhj6s")
 theme_override_font_sizes/font_size = 30
 text = " Air-fls"
@@ -59,16 +59,17 @@ text = " Air-fls"
 [node name="1 level" type="Button" parent="."]
 offset_left = 7.0
 offset_top = 3.0
-offset_right = 195.0
-offset_bottom = 80.0
+offset_right = 171.02
+offset_bottom = 64.0
 theme = ExtResource("2_nhj6s")
 theme_override_font_sizes/font_size = 30
 text = "linearly"
 
 [node name="menu" type="Button" parent="."]
-offset_left = 1255.0
-offset_right = 1383.0
-offset_bottom = 42.0
+offset_left = 1211.0
+offset_top = 8.0
+offset_right = 1339.0
+offset_bottom = 50.0
 theme = ExtResource("2_nhj6s")
 text = "Menu"
 

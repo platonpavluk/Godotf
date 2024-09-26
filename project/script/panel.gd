@@ -4,16 +4,18 @@ extends Node2D
 var open = false
 
 func _physics_process(delta: float) -> void:
-	reload()
 	if Input.is_action_just_pressed("Menu"):
 		if open == true:
-			timer.start()
-			Score.visible = false
-			open = false
+			if timer.is_stopped():
+				Score.visible = false
+				open = false
+			else:
+				Score.visible = false
+				open = false
+				timer.start()
 		else:
-				timer.stop()
-				Score.visible = true
 				open = true
+				Score.visible = true
 
 		
 

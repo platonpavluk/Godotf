@@ -1,3 +1,13 @@
-res://Scenes/level 2.tscn
+res://Scenes/level3.tscn
 res://User interface/Button&Panel.tres
+res://Scenes/freeze.gd
+res://Scenes/freze.tscn
+res://Scenes/level 2.tscn
+res://Scenes/menu.tscn
+res://Scenes/tadle.tscn
+res://Scenes/Ui.tscn
+res://script/panel.gd
+res://Scenes/panel.gd
+res://Scenes/player.tscn
+res://Scenes/level 1.tscn
 res://User interface/Tile-set.tres
