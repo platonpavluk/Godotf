@@ -73,6 +73,16 @@ offset_bottom = 50.0
 theme = ExtResource("2_nhj6s")
 text = "Menu"
 
+[node name="3 level" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 172.0
+offset_bottom = 209.0
+theme = ExtResource("2_nhj6s")
+theme_override_font_sizes/font_size = 35
+text = "Hody"
+
 [connection signal="pressed" from="2 level" to="." method="_on_2_level_pressed"]
 [connection signal="pressed" from="1 level" to="." method="_on_1_level_pressed"]
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="3 level" to="." method="_on_3_level_pressed"]
