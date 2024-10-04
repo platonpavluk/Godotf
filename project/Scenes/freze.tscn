@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xfowk0eopedh"]
 
-[ext_resource type="Script" path="res://Scenes/freeze.gd" id="1_6bwij"]
+[ext_resource type="Script" path="res://script/freeze.gd" id="1_6bwij"]
 
 [node name="freeze" type="Node2D"]
 
@@ -9,13 +9,13 @@ script = ExtResource("1_6bwij")
 
 [node name="ColorRect" type="ColorRect" parent="Area2D"]
 offset_left = -10.0
-offset_top = -7.0
 offset_right = 10.0
 offset_bottom = 5.0
-color = Color(0.231518, 0.231518, 0.231518, 1)
+color = Color(0.246085, 0.577119, 0.795001, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(3, 5, 10, 5, 10, 1, -10, 1, -10, 5)
+visible = false
+polygon = PackedVector2Array(10, 5, 10, -7, -10, -7, -10, 5)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

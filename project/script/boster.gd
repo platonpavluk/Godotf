@@ -2,7 +2,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		body.SPEED = body.base_speed + 50  
+		body.SPEED = body.base_speed + 40  
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

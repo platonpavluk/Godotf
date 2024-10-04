@@ -5,5 +5,6 @@ extends Area2D
 
 func _on_body_entered(body) -> void:
 	if !timer.is_stopped() and body.name == "Player":
+			Engine.time_scale = 0
 			timer.stop()
 		

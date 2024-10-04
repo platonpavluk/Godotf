@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var base_speed = 150.0
 var SPEED = base_speed
-const JUMP_VELOCITY = 200.0
-const GRAVITY = 500.0  # Гравітація
+const JUMP_VELOCITY = 190.0
+const GRAVITY = 650.0  # Гравітація
 
 var jump_count = 0
 var max_jumps = 2
