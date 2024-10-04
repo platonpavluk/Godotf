@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://crc2pj7g4381j"]
+
+[ext_resource type="Script" path="res://script/table.gd" id="1_b336d"]
+[ext_resource type="Script" path="res://script/parallax_background.gd" id="2_f1nbr"]
+[ext_resource type="Theme" uid="uid://cgdx60dxg8h1l" path="res://User interface/Button&Panel.tres" id="2_nhj6s"]
+[ext_resource type="Texture2D" uid="uid://7500l0woqcf0" path="res://image/tiled/background_0.png" id="3_eo2vg"]
+[ext_resource type="Texture2D" uid="uid://dimqww8pg26s8" path="res://image/tiled/background_1.png" id="4_abewt"]
+[ext_resource type="Texture2D" uid="uid://cv2myhqg01ejn" path="res://image/tiled/background_2.png" id="5_oun4c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b336d")
+
+[node name="backgound" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="backgound"]
+script = ExtResource("2_f1nbr")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, -156)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.04, 0)
+motion_mirroring = Vector2(153, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_eo2vg")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, -157)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(153, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_abewt")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, -157)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.16, 0)
+motion_mirroring = Vector2(153, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("5_oun4c")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 68.0
+offset_right = 92.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nhj6s")
+text = "Menu"
+
+[node name="1 level" type="Button" parent="CanvasLayer"]
+offset_left = 192.0
+offset_top = 300.0
+offset_right = 376.0
+offset_bottom = 348.0
+theme = ExtResource("2_nhj6s")
+text = "linearly"
+
+[node name="2 level" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -24.0
+offset_right = 92.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_nhj6s")
+text = " Air-fls"
+
+[node name="3 level" type="Button" parent="CanvasLayer"]
+offset_left = 768.0
+offset_top = 300.0
+offset_right = 952.0
+offset_bottom = 348.0
+theme = ExtResource("2_nhj6s")
+text = "Hody"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -180.0
+offset_right = 120.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nhj6s")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 44
+text = "Select Level"
+
+[connection signal="pressed" from="CanvasLayer/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/1 level" to="." method="_on_1_level_pressed"]
+[connection signal="pressed" from="CanvasLayer/2 level" to="." method="_on_2_level_pressed"]
+[connection signal="pressed" from="CanvasLayer/3 level" to="." method="_on_3_level_pressed"]

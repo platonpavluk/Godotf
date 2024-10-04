@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://hjnohasl4dkw"]
+
+[ext_resource type="Script" path="res://script/menu.gd" id="1_07225"]
+[ext_resource type="Texture2D" uid="uid://7500l0woqcf0" path="res://image/tiled/background_0.png" id="2_tdr5y"]
+[ext_resource type="Script" path="res://script/parallax_background.gd" id="2_xlkwh"]
+[ext_resource type="Texture2D" uid="uid://dimqww8pg26s8" path="res://image/tiled/background_1.png" id="3_4n4lu"]
+[ext_resource type="Texture2D" uid="uid://cv2myhqg01ejn" path="res://image/tiled/background_2.png" id="4_ytkko"]
+[ext_resource type="Theme" uid="uid://cgdx60dxg8h1l" path="res://User interface/Button&Panel.tres" id="5_qejpe"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_07225")
+
+[node name="backgound" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="backgound"]
+script = ExtResource("2_xlkwh")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, -156)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.04, 0)
+motion_mirroring = Vector2(153, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_tdr5y")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, -157)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(153, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_4n4lu")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="backgound/ParallaxBackground"]
+position = Vector2(0, -157)
+scale = Vector2(3, 3)
+motion_scale = Vector2(0.16, 0)
+motion_mirroring = Vector2(153, 0)
+metadata/_edit_group_ = true
+
+[node name="Background1" type="Sprite2D" parent="backgound/ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_ytkko")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -23.5
+offset_right = 103.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_qejpe")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.684665, 0.803943, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 36.0
+offset_right = 103.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_qejpe")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.684665, 0.803943, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+text = "Exit
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed_play"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
