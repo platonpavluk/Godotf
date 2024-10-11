@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://tblf7l6jjw2"]
+[gd_scene load_steps=14 format=4 uid="uid://tblf7l6jjw2"]
 
 [ext_resource type="PackedScene" uid="uid://d2jsa860fq8if" path="res://Scenes/finish.tscn" id="1_0pkdy"]
 [ext_resource type="PackedScene" uid="uid://cvtnfvbv4y2r5" path="res://Scenes/player.tscn" id="2_u3r3n"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2y48cbiee4ce" path="res://Scenes/Booster.tscn" id="8_njtu4"]
 [ext_resource type="PackedScene" uid="uid://b801fx1aj46gr" path="res://Scenes/Ui.tscn" id="10_6ec07"]
 [ext_resource type="PackedScene" uid="uid://xfowk0eopedh" path="res://Scenes/freze.tscn" id="10_s2u0s"]
+[ext_resource type="PackedScene" uid="uid://bvwentkhbf676" path="res://Scenes/coin.tscn" id="11_hbotf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pwvh"]
 texture = ExtResource("4_2e8jl")
@@ -107,6 +108,7 @@ sources/0 = SubResource("TileSetAtlasSource_8pwvh")
 position = Vector2(1224, -162)
 
 [node name="Player" parent="." instance=ExtResource("2_u3r3n")]
+position = Vector2(0, -38)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("3_bg355")
@@ -178,3 +180,78 @@ scale = Vector2(2.42559, 1)
 [node name="freeze4" parent="Node" instance=ExtResource("10_s2u0s")]
 position = Vector2(888, -4)
 scale = Vector2(19.9041, 1)
+
+[node name="Node2D" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D2" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D3" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D4" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D5" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D6" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D7" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D8" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D9" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D10" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D11" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D12" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D13" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D14" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D15" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D16" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D17" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D18" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D19" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D20" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D21" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D22" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D23" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D24" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)
+
+[node name="Node2D25" parent="." instance=ExtResource("11_hbotf")]
+position = Vector2(195, 25)

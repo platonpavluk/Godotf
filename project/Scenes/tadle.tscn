@@ -118,7 +118,16 @@ theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 44
 text = "Select Level"
 
+[node name="4 level" type="Button" parent="CanvasLayer"]
+offset_left = 486.0
+offset_top = 228.0
+offset_right = 670.0
+offset_bottom = 276.0
+theme = ExtResource("2_nhj6s")
+text = "Cango"
+
 [connection signal="pressed" from="CanvasLayer/menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/1 level" to="." method="_on_1_level_pressed"]
 [connection signal="pressed" from="CanvasLayer/2 level" to="." method="_on_2_level_pressed"]
 [connection signal="pressed" from="CanvasLayer/3 level" to="." method="_on_3_level_pressed"]
+[connection signal="pressed" from="CanvasLayer/4 level" to="." method="_on__level_pressed"]

@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhr0l45ato2ef"]
+
+[ext_resource type="Theme" uid="uid://cgdx60dxg8h1l" path="res://User interface/Button&Panel.tres" id="1_7cm43"]
+[ext_resource type="Script" path="res://Scenes/shop.gd" id="1_h51r2"]
+[ext_resource type="Texture2D" uid="uid://dw3nrdx6h2iey" path="res://image/B_witch_idle.png" id="2_6j58v"]
+[ext_resource type="FontFile" uid="uid://dhxu7sjvpgv75" path="res://Oswald-VariableFont_wght.ttf" id="3_mg6ty"]
+[ext_resource type="Texture2D" uid="uid://qtkvj7pl7rau" path="res://image/IDLE.png" id="5_wjwi2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffejx"]
+atlas = ExtResource("2_6j58v")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8pi3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffejx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f3u4"]
+atlas = ExtResource("5_wjwi2")
+region = Rect2(0, 0, 93, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ew8jq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f3u4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_h51r2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1197.0
+offset_bottom = 699.0
+color = Color(0.145098, 0.145098, 0.145098, 0.592157)
+
+[node name="buy" type="Button" parent="."]
+offset_left = 36.0
+offset_top = 285.0
+offset_right = 324.0
+offset_bottom = 343.0
+theme = ExtResource("1_7cm43")
+text = "Buy"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(185.25, 180.75)
+scale = Vector2(4.54688, 3.98958)
+sprite_frames = SubResource("SpriteFrames_8pi3o")
+
+[node name="prace" type="Label" parent="."]
+offset_left = 138.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mg6ty")
+theme_override_font_sizes/font_size = 50
+text = "100"
+
+[node name="coins" type="Label" parent="."]
+offset_left = 917.0
+offset_top = 7.0
+offset_right = 1035.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mg6ty")
+theme_override_font_sizes/font_size = 50
+text = "0 Coin"
+
+[node name="back" type="Button" parent="."]
+offset_right = 130.0
+offset_bottom = 24.0
+theme = ExtResource("1_7cm43")
+text = "Back"
+
+[node name="buy2" type="Button" parent="."]
+offset_left = 353.0
+offset_top = 287.0
+offset_right = 667.0
+offset_bottom = 341.0
+theme = ExtResource("1_7cm43")
+text = "Buy"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 455.0
+offset_top = 17.0
+offset_right = 528.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_mg6ty")
+theme_override_font_sizes/font_size = 50
+text = "350"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(503, 74)
+scale = Vector2(4.32796, 3.60714)
+sprite_frames = SubResource("SpriteFrames_ew8jq")
+
+[connection signal="pressed" from="buy" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="buy2" to="." method="_on_buy_2_pressed"]
