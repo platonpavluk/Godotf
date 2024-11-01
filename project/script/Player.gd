@@ -2,16 +2,17 @@ extends CharacterBody2D
 
 var base_speed = 150.0
 var SPEED = base_speed
-const JUMP_VELOCITY = 190.0
+var JUMP_VELOCITY = 190.0
 const GRAVITY = 650.0  # Гравітація
 
 var jump_count = 0
 var max_jumps = 2
 var direction
 var frozen: bool = false
+var time_left = 1
 
 @onready var animation = $Sprite  # Ваш AnimatedSprite
-
+@onready var spedometer = $Spedometer
 
 
 
@@ -56,3 +57,9 @@ func freeze_player():
 
 func unfreeze_player():
 	frozen = false  # Розморожуємо
+
+
+func _on_spedometer_timeout() -> void:
+	SPEED = base_speed
+	JUMP_VELOCITY = 190
+	spedometer.stop()

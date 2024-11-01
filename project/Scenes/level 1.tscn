@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://xfowk0eopedh" path="res://Scenes/freze.tscn" id="10_s2u0s"]
 [ext_resource type="PackedScene" uid="uid://bvwentkhbf676" path="res://Scenes/coin.tscn" id="11_hbotf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pwvh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh1xk"]
 texture = ExtResource("4_2e8jl")
 8:9/0 = 0
 8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -100,7 +100,7 @@ texture = ExtResource("4_2e8jl")
 
 [sub_resource type="TileSet" id="TileSet_uq18x"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8pwvh")
+sources/0 = SubResource("TileSetAtlasSource_lh1xk")
 
 [node name="Game" type="Node2D"]
 

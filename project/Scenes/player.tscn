@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"freeze",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -110,35 +110,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84ndo"]
 size = Vector2(17, 21)
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 2
 position = Vector2(-4, -2)
 script = ExtResource("1_v0sqn")
 metadata/_edit_vertical_guides_ = [-189.0]
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
 scale = Vector2(1.50057, 1.39286)
 sprite_frames = SubResource("SpriteFrames_r6o4e")
-animation = &"run"
+animation = &"idle"
 
 [node name="Colision" type="CollisionShape2D" parent="."]
+z_index = 1
 shape = SubResource("RectangleShape2D_84ndo")
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 ignore_rotation = false
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 limit_left = -240
 limit_bottom = 192
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 6.0
+position_smoothing_speed = 8.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_horizontal_offset = 0.14
-drag_vertical_offset = 0.14
+drag_horizontal_offset = -0.14
+drag_vertical_offset = -0.4
+editor_draw_drag_margin = true
+
+[node name="Spedometer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Spedometer" to="." method="_on_spedometer_timeout"]

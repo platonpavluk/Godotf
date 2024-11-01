@@ -110,6 +110,7 @@ theme = ExtResource("5_qejpe")
 text = "Back"
 
 [node name="1 level" type="Button" parent="CanvasLayer/Level Select"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 296.0
 offset_right = 320.0
@@ -136,6 +137,7 @@ theme = ExtResource("5_qejpe")
 text = " Air-fls"
 
 [node name="3 level" type="Button" parent="CanvasLayer/Level Select"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 368.0
 offset_right = 672.0
@@ -144,12 +146,21 @@ theme = ExtResource("5_qejpe")
 text = "Hody"
 
 [node name="4 level" type="Button" parent="CanvasLayer/Level Select"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 296.0
 offset_right = 672.0
 offset_bottom = 344.0
 theme = ExtResource("5_qejpe")
 text = "Cango"
+
+[node name="2 redux level" type="Button" parent="CanvasLayer/Level Select"]
+offset_left = 832.0
+offset_top = 296.0
+offset_right = 1024.0
+offset_bottom = 344.0
+theme = ExtResource("5_qejpe")
+text = "Shark Lagoon"
 
 [node name="Label" type="Label" parent="CanvasLayer/Level Select"]
 layout_mode = 1
@@ -237,6 +248,7 @@ text = "Exit
 "
 
 [node name="Button3" type="Button" parent="CanvasLayer/Start menu"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 368.0
 offset_right = 672.0
@@ -262,6 +274,7 @@ offset_bottom = 472.0
 theme = ExtResource("5_qejpe")
 
 [node name="price" type="Label" parent="CanvasLayer/Shop/Panel"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 185.0
@@ -322,6 +335,7 @@ scale = Vector2(4.32796, 3.60714)
 sprite_frames = SubResource("SpriteFrames_sjn01")
 
 [node name="price" type="Label" parent="CanvasLayer/Shop/Panel2"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 185.0
@@ -332,6 +346,7 @@ text = "350 coins"
 justification_flags = 0
 
 [node name="coins" type="Label" parent="CanvasLayer/Shop"]
+layout_mode = 0
 offset_left = 960.0
 offset_top = 24.0
 offset_right = 1088.0
@@ -341,6 +356,7 @@ theme_override_font_sizes/font_size = 36
 text = "0 Coins"
 
 [node name="back" type="Button" parent="CanvasLayer/Shop"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 528.0
 offset_right = 674.0
@@ -353,6 +369,7 @@ text = "Back"
 [connection signal="pressed" from="CanvasLayer/Level Select/2 level" to="." method="_on__level2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Level Select/3 level" to="." method="_on__level3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Level Select/4 level" to="." method="_on__level4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Level Select/2 redux level" to="." method="_on__level5_pressed"]
 [connection signal="pressed" from="CanvasLayer/Start menu/Button" to="." method="_on_button_pressed_play"]
 [connection signal="pressed" from="CanvasLayer/Start menu/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Start menu/Button3" to="." method="_on_button_3_pressed"]

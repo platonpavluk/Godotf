@@ -2,14 +2,16 @@ extends Node2D
 @onready var Score = $CanvasLayer/Score
 @onready var timer = $Timer
 var open = false
-
+var lock = false
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Menu"):
-		if open == false:
+		if open == false and lock != true:
 			timer.stop()
 			Score.visible = true
 			open = true
 			Engine.time_scale = 0
+		elif lock == true:
+			const open = true
 		else:
 			Score.visible = false
 			open = false

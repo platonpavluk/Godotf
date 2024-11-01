@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ktp67asy7fw0"]
+
+[ext_resource type="Script" path="res://Scenes/toxic.gd" id="1_lr44o"]
+
+[sub_resource type="Gradient" id="Gradient_ub86t"]
+colors = PackedColorArray(0.0470588, 0.682353, 0.227451, 1, 0.454902, 0.784314, 0.372549, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w3ysg"]
+gradient = SubResource("Gradient_ub86t")
+width = 512
+height = 256
+fill_from = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7brji"]
+size = Vector2(32, 16)
+
+[node name="Toxic" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_lr44o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+z_index = 2
+scale = Vector2(0.062, 0.062)
+texture = SubResource("GradientTexture2D_w3ysg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7brji")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

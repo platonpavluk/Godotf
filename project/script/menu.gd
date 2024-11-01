@@ -40,3 +40,7 @@ func _on__level3_pressed() -> void:
 
 func _on__level4_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/level 4.tscn")
+
+
+func _on__level5_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/level 1 redux.tscn")
